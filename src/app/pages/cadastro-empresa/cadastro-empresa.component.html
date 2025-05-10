@@ -1,0 +1,25 @@
+<div class="cadastro-empresa-container">
+  <h1>Cadastro da Empresa Matriz</h1>
+  <form [formGroup]="cadastroEmpresaForm" (ngSubmit)="onSubmit()">
+    
+    <label>Nome da Empresa</label>
+    <input formControlName="nomeEmpresa" type="text">
+    <div *ngIf="cadastroEmpresaForm.get('nomeEmpresa')?.invalid && cadastroEmpresaForm.get('nomeEmpresa')?.touched">
+      <p class="erro">O nome da empresa é obrigatório.</p>
+    </div>
+
+    <label>CNPJ</label>
+    <input formControlName="cnpj" type="text" placeholder="00.000.000/0000-00">
+    <div *ngIf="cadastroEmpresaForm.get('cnpj')?.invalid && cadastroEmpresaForm.get('cnpj')?.touched">
+      <p class="erro">CNPJ inválido.</p>
+    </div>
+
+    <label>Endereço</label>
+    <input formControlName="endereco" type="text">
+
+    <label>Telefone</label>
+    <input formControlName="telefone" type="text">
+
+    <button type="submit" [disabled]="cadastroEmpresaForm.invalid">Salvar</button>
+  </form>
+</div>

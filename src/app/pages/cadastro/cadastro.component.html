@@ -1,0 +1,31 @@
+<div class="cadastro-container">
+  <h1>Crie sua Conta</h1>
+  <p>Preencha os campos abaixo para continuar.</p>
+
+  
+    <label>Nome Completo</label>
+    <input formControlName="nome" type="text">
+    <div *ngIf="cadastroForm.get('nome')?.invalid && cadastroForm.get('nome')?.touched">
+      <p class="erro">Nome é obrigatório.</p>
+    </div>
+
+    <label>E-mail</label>
+    <input formControlName="email" type="email">
+    <div *ngIf="cadastroForm.get('email')?.invalid && cadastroForm.get('email')?.touched">
+      <p class="erro">Digite um e-mail válido.</p>
+    </div>
+
+    <label>Senha</label>
+    <input formControlName="senha" type="password">
+    <div *ngIf="cadastroForm.get('senha')?.invalid && cadastroForm.get('senha')?.touched">
+      <p class="erro">A senha deve ter no mínimo 6 caracteres.</p>
+    </div>
+
+    <div class="termos">
+      <input formControlName="termos" type="checkbox">
+      <label>Aceito os termos de uso</label>
+    </div>
+
+    <button type="submit" [disabled]="cadastroForm.invalid">Cadastrar</button>
+
+</div>
