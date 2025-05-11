@@ -2,7 +2,7 @@
   <h1>Crie sua Conta</h1>
   <p>Preencha os campos abaixo para continuar.</p>
 
-  <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+  <!-- <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()"> -->
     <label>Nome Completo</label>
     <input formControlName="nome" type="text">
     <div *ngIf="cadastroForm.get('nome')?.invalid && cadastroForm.get('nome')?.touched">
@@ -27,5 +27,5 @@
     </div>
 
     <button type="submit" [disabled]="cadastroForm.invalid">Cadastrar</button>
-  </form>
+  <!-- </form> -->
 </div>

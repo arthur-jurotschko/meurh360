@@ -1,6 +1,6 @@
 <div class="cadastro-empresa-container">
   <h1>Cadastro da Empresa Matriz</h1>
-  <form [formGroup]="cadastroEmpresaForm" (ngSubmit)="onSubmit()">
+  <!-- <form [formGroup]="cadastroEmpresaForm" (ngSubmit)="onSubmit()"> -->
     
     <label>Nome da Empresa</label>
     <input formControlName="nomeEmpresa" type="text">
@@ -21,5 +21,5 @@
     <input formControlName="telefone" type="text">
 
     <button type="submit" [disabled]="cadastroEmpresaForm.invalid">Salvar</button>
-  </form>
+  <!-- </form> -->
 </div>
