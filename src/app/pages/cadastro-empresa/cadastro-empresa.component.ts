@@ -10,12 +10,13 @@ import { CadastroEmpresaService } from '../../services/cadastro-empresa.service'
   styleUrls: ['./cadastro-empresa.component.css']
 })
 export class CadastroEmpresaComponent {
-  cadastroEmpresaForm = new FormGroup({
-    nomeEmpresa: new FormControl('', Validators.required),
-    cnpj: new FormControl('', [Validators.required, Validators.pattern(/^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/)]),
-    endereco: new FormControl('', Validators.required),
-    telefone: new FormControl('', [Validators.required, Validators.pattern(/^\(\d{2}\) \d{4,5}-\d{4}$/)])
-  });
+cadastroEmpresaForm = new FormGroup({
+  nomeEmpresa: new FormControl('', Validators.required),
+  cnpj: new FormControl('', [Validators.required, Validators.pattern(/^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/)]),
+  endereco: new FormControl('', Validators.required),
+  telefone: new FormControl('', [Validators.required, Validators.pattern(/^\(\d{2}\) \d{4,5}-\d{4}$/)])
+});
+
 
   constructor(private cadastroService: CadastroEmpresaService, private router: Router) {}
 
